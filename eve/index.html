@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Wall-Eve</title>
+</head>
+<body>
+    <div id="leaves" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <main>
+          <img class="bg" src="assets/designs/bg.jpg" alt="Background">
+
+        <div class="logo">
+            <img src="assets/designs/logo.png" alt="logo">
+        </div>
+        
+        <p class="typing-text" id="typingText">Welcome to Wall-Eve! This website is dedicated to our beloved friend, Eve:)</p>
+    </main>
+
+    <div class="home-actions">
+        <button class="write-button" id="openWriteModal">Write a Letter</button>
+        <button class="letters-button" onclick="sessionStorage.setItem('wallEveResumeAudio', '1'); window.location.href='letters.html'">View Letters</button>
+    </div>
+
+    <div class="modal-overlay" id="letterModal">
+        <div class="modal-card">
+            <h2>Start your letter</h2>
+            <label for="senderName">Your name</label>
+            <input id="senderName" type="text" placeholder="Enter your name"/>
+            <div class="modal-actions">
+                <button class="cancel-btn" id="closeModal">Cancel</button>
+                <button class="next-btn" id="continueWrite">Continue</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="siteAudio" loop preload="auto" playsinline>
+        <source src="assets/audios/ns.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+    
+</body>
+</html>
