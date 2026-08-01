@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/index.css">
+    <link rel="icon" href="assets/images/favicon.png" type="image/x-icon">
+    <title>Write - Wall-Eve</title>
+</head>
+<body>
+    <div id="leaves" aria-hidden="true">
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+    </div>
+
+    <div id="candleLayer" class="candle-layer" aria-live="polite"></div>
+
+    <main class="write-main">
+        <div class="bg" aria-hidden="true"></div>
+        <h1>Write</h1>
+        <p>Hello! Our angel is excited to receive your letter!</p>
+        <button class="write-button" id="openLetterModal" type="button" onclick="window.openLetterModal && window.openLetterModal()">Write a Letter</button>
+        <button class="write-button" type="button" onclick="window.location.href='letters.html'">View Letters</button>
+        <button class="candle-button" id="lightCandleBtn" type="button" aria-pressed="false">
+            <span class="candle-icon" aria-hidden="true">
+                <img id="candleImage" src="assets/candle/c1.png" alt="">
+            </span>
+            <span class="candle-label">Light a Candle</span>
+        </button>
+    </main>
+
+    <div class="modal-overlay" id="letterModal">
+        <div class="modal-card">
+            <h2>Start your letter</h2>
+            <div id="step1">
+                <label for="senderName">Your name</label>
+                <input id="senderName" type="text" placeholder="Enter your name" />
+
+                <label for="letterText">Your letter</label>
+                <textarea id="letterText" rows="5" placeholder="Type your letter here..."></textarea>
+
+                <div class="modal-actions">
+                    <button class="cancel-btn" id="closeModal">Cancel</button>
+                    <button class="next-btn" id="nextStep">Done</button>
+                </div>
+            </div>
+            <div id="step2" style="display:none;">
+                <label>Choose a letter style</label>
+                <div class="icon-options">
+                    <div class="icon-option" data-icon="mail">
+                        <span><img src="assets/designs/brownmail.png" alt="" srcset=""></span>
+                        <div>Brown Mail</div>
+                    </div>
+                    <div class="icon-option" data-icon="letter">
+                        <span><img src="assets/designs/pinkmail.png" alt="" srcset=""></span>
+                        <div>Pink Mail</div>
+                    </div>
+                </div>
+                <div class="modal-actions">
+                    <button class="cancel-btn" id="backStep">Back</button>
+                    <button class="next-btn" id="finishStep">Done</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <button class="back-button" id="backToHome" onclick="window.location.href='index.html'">Back to Home</button>
+
+
+    <audio id="siteAudio" loop preload="auto" playsinline>
+        <source src="assets/audios/ns.mp3" type="audio/mpeg">
+    </audio>
+
+    <script src="js/main.js"></script>
+    <script src="js/firebase.js"></script>
+    <script src="js/write.js"></script>
+</body>
+</html>
